@@ -2,12 +2,12 @@ name: my-action
 description: my composite action
 inputs:
   foo:
-    description: my composite action input
+    description: my action input
     required: false
     default: my-default-foo-value
 outputs:
   bar:
-    description: my composite action output
+    description: my action output
     value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: composite
