@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: echo Hello ${{ foo }}
+      - run: echo Hello ${{ matrix.foo }}
   test:
     runs-on: ubuntu-latest
     steps:
