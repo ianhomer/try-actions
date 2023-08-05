@@ -25,7 +25,7 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm test
-  parallel-job:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -34,4 +34,10 @@ jobs:
         with:
           foo: my-foo-value
       - run: echo action output ${{ steps.foo.outputs.bar }}
-        shell: bash
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - uses: actions/checkout@v3
+      - name: foo
+        uses: ./.github/actions/my-action

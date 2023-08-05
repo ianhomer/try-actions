@@ -4,7 +4,7 @@ inputs:
   foo:
     description: Example input
     required: false
-    default: foo-value
+    default: my-default-foo-value
 outputs:
   bar:
     description: Example output
