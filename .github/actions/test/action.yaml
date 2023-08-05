@@ -12,4 +12,6 @@ runs:
       with:
         version: 8.x
     - run: pnpm ci
+      shell: bash
     - run: pnpm test
+      shell: bash
