@@ -1,0 +1,19 @@
+name: my-action-input-output
+description: my action
+inputs:
+  foo:
+    description: my action input
+    required: false
+    default: my-default-foo-value
+outputs:
+  bar:
+    description: my action output
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: composite
+  steps:
+    - run: echo Hello ${{ inputs.foo-value }}
+      shell: bash
+    - id: random-number-generator
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
