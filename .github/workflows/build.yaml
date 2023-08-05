@@ -25,6 +25,9 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm test
+  parallel-job:
+    runs-on: ubuntu-latest
+    steps:
       - name: foo
         uses: ./.github/actions/my-action
         with:
