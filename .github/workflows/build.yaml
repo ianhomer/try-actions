@@ -36,7 +36,13 @@ jobs:
       - run: echo action output ${{ steps.foo.outputs.bar }}
   job2:
     runs-on: ubuntu-latest
-    needs: job1
+    steps:
+      - uses: actions/checkout@v3
+      - name: foo
+        uses: ./.github/actions/my-action
+  job3:
+    runs-on: ubuntu-latest
+    needs: [job1, job2]
     steps:
       - uses: actions/checkout@v3
       - name: foo
