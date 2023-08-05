@@ -1,0 +1,7 @@
+{
+  "name": "My starter workflow",
+  "description": "Example of a starter workflow",
+  "iconName": "example-icon",
+  "categories": ["try"],
+  "filePatterns": ["package.json$"]
+}
