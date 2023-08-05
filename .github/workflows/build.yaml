@@ -25,3 +25,9 @@ jobs:
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm test
+      - name: foo
+        uses: .github/actions/my-action
+        with:
+          foo: my-foo-value
+      - run: echo action output ${{ steps.foo.outputs.bar }}
+        shell: bash
