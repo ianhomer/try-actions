@@ -85,4 +85,4 @@ jobs:
         uses: ./.github/actions/my-action
 
   reusable-workflow:
-    uses: .github/workflows/my-worflow.yaml
+    uses: ./.github/workflows/my-worflow.yaml
