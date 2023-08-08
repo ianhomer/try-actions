@@ -1,5 +1,9 @@
 name: my-action-with-env
 description: my action with env
+inputs:
+  my-secret:
+    description: my action secret
+    required: true
 runs:
   using: composite
   steps:
@@ -9,4 +13,4 @@ runs:
       shell: bash
       env:
         MY_VARIABLE: ${{ github.sha }}
-        MY_SECRET: ${{ secrets.MY_SECRET }}
+        MY_SECRET: ${{ inputs.my-secret }}
