@@ -1,0 +1,9 @@
+name: my-action-with-env
+description: my action with env
+runs:
+  using: composite
+  steps:
+    - run: echo Hello, ${MY_VARIABLE}
+      shell: bash
+      env:
+        MY_VARIABLE: ${{ GITHUB_SHA }}
