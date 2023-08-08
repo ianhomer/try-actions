@@ -68,6 +68,8 @@ jobs:
       - uses: actions/checkout@v3
       - run: echo Hello, job4
       - uses: ./.github/actions/my-action-with-env
+        with:
+          my-secret: ${{ secrets.MY-SECRET }}
 
   job-after:
     runs-on: ubuntu-latest
