@@ -87,9 +87,18 @@ jobs:
       - name: foo
         uses: ./.github/actions/my-action
 
+  env:
+    runs-on: ubuntu-latest
+    outputs:
+      my-variable: ${{ steps.set.outputs.my-variable }}
+    steps:
+      - id: set
+        run: |
+          echo "::set-output name=my-variable::my-variable-value"
+
   reusable-workflow:
     uses: ./.github/workflows/my-workflow.yaml
     with:
-      my-environment-variable: ${{ env.my-environment-variable }}
+      my-variable: ${{ needs.env.outputs.my-variable-value }}
     secrets:
       MY_SECRET: ${{ secrets.MY_SECRET }}

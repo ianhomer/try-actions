@@ -3,7 +3,7 @@ name: build
 on:
   workflow_call:
     inputs:
-      my-environment-variable:
+      my-variable:
         required: true
         type: string
     secrets:
@@ -26,4 +26,4 @@ jobs:
       - uses: ./.github/actions/my-action-with-env
         with:
           my-secret: ${{ secrets.MY_SECRET }}
-          my-input: ${{ inputs.my-environment-variable }}
+          my-input: ${{ inputs.my-variable }}
