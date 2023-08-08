@@ -67,7 +67,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          echo Hello, ${MY_SECRET:-3}, ${MY_INPUT:-3}
+          echo Hello, ${MY_SECRET: -3}, ${MY_INPUT: -3}
         env:
           MY_INPUT: my-env-value-open-text
           MY_SECRET: ${{ secrets.MY-SECRET }}
