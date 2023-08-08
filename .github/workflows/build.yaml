@@ -70,10 +70,10 @@ jobs:
           echo Hello, ${MY_SECRET: -3}, ${MY_INPUT: -3}
         env:
           MY_INPUT: my-env-value-open-text
-          MY_SECRET: ${{ secrets.MY-SECRET }}
+          MY_SECRET: ${{ secrets.MY_SECRET }}
       - uses: ./.github/actions/my-action-with-env
         with:
-          my-secret: ${{ secrets.MY-SECRET }}
+          my-secret: ${{ secrets.MY_SECRET }}
           my-input: my-input-value-open-text
 
   job-after:
