@@ -90,11 +90,7 @@ jobs:
   env:
     runs-on: ubuntu-latest
     outputs:
-      my-variable: ${{ steps.set.outputs.my-variable }}
-    steps:
-      - id: set
-        run: |
-          echo "::set-output name=my-variable::my-variable-value-from-step-setter"
+      my-variable: my-variable-value-from-env-setter
 
   reusable-workflow:
     uses: ./.github/workflows/my-workflow.yaml
