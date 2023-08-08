@@ -13,7 +13,5 @@ runs:
         version: 8.x
     - run: pnpm install
       shell: bash
-    - run: |
-        exit 1
-        # pnpm test
+    - run: pnpm test
       shell: bash
