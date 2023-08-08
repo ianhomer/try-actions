@@ -3,7 +3,10 @@ description: my action with env
 runs:
   using: composite
   steps:
-    - run: echo Hello, ${MY_VARIABLE}
+    - run: |
+        echo Hello, ${MY_VARIABLE}
+        echo And, '*****'${MY_SECRET: -3}
       shell: bash
       env:
         MY_VARIABLE: ${{ github.sha }}
+        MY_SECRET: ${{ secrets.MY_SECRET }}
