@@ -6,4 +6,4 @@ runs:
     - run: echo Hello, ${MY_VARIABLE}
       shell: bash
       env:
-        MY_VARIABLE: ${{ GITHUB_SHA }}
+        MY_VARIABLE: ${{ github.sha }}
