@@ -83,3 +83,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: foo
         uses: ./.github/actions/my-action
+
+  reusable-workflow:
+    uses: .github/workflows/my-worflow.yaml
