@@ -9,7 +9,7 @@ runs:
   steps:
     - run: |
         echo Hello, ${MY_VARIABLE}
-        echo And, '*****'${MY_SECRET: -3}
+        echo And, '*****'"${MY_SECRET: -3}"
       shell: bash
       env:
         MY_VARIABLE: ${{ github.sha }}
