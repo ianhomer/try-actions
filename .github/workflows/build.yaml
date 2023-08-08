@@ -91,4 +91,5 @@ jobs:
     uses: ./.github/workflows/my-workflow.yaml
     with:
       my-environment-variable: ${{ env.my-environment-variable }}
-    secrets: inherit
+    secrets:
+      MY_SECRET: ${{ secrets.MY_SECRET }}

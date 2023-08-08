@@ -6,6 +6,9 @@ on:
     my-environment-variable:
       required: true
       type: string
+  secrets:
+    MY_SECRET:
+      required: true
 
 jobs:
   my-workflow-job:
