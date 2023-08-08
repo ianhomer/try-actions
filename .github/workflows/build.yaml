@@ -86,3 +86,4 @@ jobs:
 
   reusable-workflow:
     uses: ./.github/workflows/my-workflow.yaml
+    secrets: inherit

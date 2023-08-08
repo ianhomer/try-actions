@@ -11,3 +11,11 @@ jobs:
       - run: echo Hello, my-workflow-job
       - name: inline action
         uses: ./.github/actions/my-action
+
+  my-workflow-job-env:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/my-action-with-env
+        with:
+          my-secret: ${{ secrets.MY_SECRET }}
