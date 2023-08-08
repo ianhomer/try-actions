@@ -70,6 +70,7 @@ jobs:
       - uses: ./.github/actions/my-action-with-env
         with:
           my-secret: ${{ secrets.MY-SECRET }}
+          my-input: my-input-value-open-text
 
   job-after:
     runs-on: ubuntu-latest

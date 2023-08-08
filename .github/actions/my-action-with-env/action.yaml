@@ -4,13 +4,19 @@ inputs:
   my-secret:
     description: my action secret
     required: true
+  my-input:
+    description: my action secret
+    required: true
 runs:
   using: composite
   steps:
     - run: |
         echo Hello, ${MY_VARIABLE}
-        echo And, '*****'"${MY_SECRET: -3}"
+        echo Secret, '*****'${MY_SECRET: -3}
+        echo End of input, ${MY_INPUT: -3}
+        echo Input, ${MY_INPUT}
       shell: bash
       env:
         MY_VARIABLE: ${{ github.sha }}
         MY_SECRET: ${{ inputs.my-secret }}
+        MY_INPUT: ${{ inputs.my-input }}
