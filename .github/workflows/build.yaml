@@ -69,7 +69,8 @@ jobs:
       - run: echo Hello, job4
       - uses: ./.github/actions/my-action-with-env
         with:
-          my-secret: ${{ secrets.MY-SECRET }}
+          my-secret: ooen-text-secret
+          #my-secret: ${{ secrets.MY-SECRET }}
           my-input: my-input-value-open-text
 
   job-after:
