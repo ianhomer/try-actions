@@ -94,7 +94,7 @@ jobs:
     steps:
       - id: set
         run: |
-          echo "::set-output name=my-variable::my-variable-value"
+          echo "::set-output name=my-variable::my-variable-value-from-step-setter"
 
   reusable-workflow:
     uses: ./.github/workflows/my-workflow.yaml
