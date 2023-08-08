@@ -91,6 +91,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       my-variable: my-variable-value-from-env-setter
+    steps:
+      - uses: actions/checkout@v3
 
   reusable-workflow:
     uses: ./.github/workflows/my-workflow.yaml
