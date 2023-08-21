@@ -1,4 +1,4 @@
-name: build
+name: my-workflow
 
 on:
   workflow_call:

@@ -79,6 +79,12 @@ jobs:
           my-secret: ${{ secrets.MY_SECRET }}
           my-input: my-input-value-open-text
 
+  ignored-fail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: exit 1
+
   job-after:
     runs-on: ubuntu-latest
     needs: [test, matrix, job1, job2, reusable-workflow]
