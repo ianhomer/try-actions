@@ -84,6 +84,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: exit 1
+        continue-on-error: true
 
   job-after:
     runs-on: ubuntu-latest
